@@ -75,6 +75,49 @@ class SinglelyLinkedList {
     }
     return current;
   }
+
+  // 리스트 앞 노드 삭제
+  shift() {
+    /*
+      리스트가 비어있으면, 삭제할 항목이 없으므로 undefined
+      기존 head를 변수로 저장 후, 2번째 노드(head.next)를 head로 업데이트
+      리스트 길이 - 1
+      리스트 항목이 모두 삭제되면(length=0), reset!
+      삭제한 값 return
+      */
+    if (!this.head) return undefined;
+    let current = this.head;
+    this.head = current.next;
+    this.length--;
+    if (this.length === 0) {
+      this.tail = null;
+    }
+    return current;
+  }
+
+  // 리스트 앞 노드 추가
+  unshift(data) {
+    /*
+      추가될 값을 parameter로
+      입력된 parameter를 받아와서 'new노드' 생성
+      리스트가 비어있으면,
+        'new노드'가 head와 tail이 된다.
+      리스트에 다른 노드가 있으면,
+        기존의 head를 'new노드'의 next값으로 지정 후, 'new노드'를 head로
+      리스트 길이 + 1
+      리스트 전체 return
+      */
+    const newNode = new Node(data);
+    if (!this.head) {
+      this.head = newNode;
+      this.tail = this.head;
+    } else {
+      newNode.next = this.head;
+      this.head = newNode;
+    }
+    this.length++;
+    return this;
+  }
 }
 
 const list = new SinglelyLinkedList();
