@@ -22,3 +22,11 @@ Removing a new node from the beginning of the Linked List.
 ### 4. Unshifting
 
 Adding a new node to the beginning of the Linked List.
+
+### 5. Getting
+
+Retrieving a node by it's position in the Linked List.
+
+### 6. Setting
+
+Changing the value of a node based on it's position in the Linked List.

@@ -118,6 +118,41 @@ class SinglelyLinkedList {
     this.length++;
     return this;
   }
+
+  // 리스트 내부의 특정 위치 노드 불러오기
+  get(index) {
+    /*
+    parameter로 인덱스값 입력
+    리스트길이를 벗어난 인덱스 입력 시 null
+    출력하고자 하는 인덱스에 도달할 때 까지 반복문 loop
+    인덱스 위치에 있는 노드 출력
+    */
+    if (index < 0 || index >= this.length) return null;
+    let counter = 0;
+    let current = this.head;
+
+    while (counter !== index) {
+      current = current.next;
+      counter++;
+    }
+    return current;
+  }
+
+  // 리스트 내부의 특정 위치 노드 value 변경하기
+  set(index, value) {
+    /*
+    parameter로 인덱스값과 바꾸고자 하는 value 입력
+    **get** method를 이용하여 노드 찾기
+    노드를 찾지 못했으면,  false 출력
+    노드를 찾으면, 입력된 value값으로 변경 후 true 출력
+    */
+    let foundNode = this.get(index);
+    if (foundNode) {
+      foundNode.data = value;
+      return true;
+    }
+    return false;
+  }
 }
 
 const list = new SinglelyLinkedList();
