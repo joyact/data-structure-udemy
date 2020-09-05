@@ -5,7 +5,7 @@ class Node {
   }
 }
 
-class SinglelyLinkedList {
+class SinglyLinkedList {
   constructor() {
     this.head = null;
     this.tail = null;
@@ -73,6 +73,7 @@ class SinglelyLinkedList {
       this.head = null;
       this.tail = null;
     }
+
     return current;
   }
 
@@ -174,23 +175,18 @@ class SinglelyLinkedList {
     리스트 길이 + 1
     true 출력
     */
+    if (index < 0 || index > this.length) return false;
+    if (index === 0) return !!this.unshift(data);
+    if (index === this.length) return !!this.push(data);
+
     const newNode = new Node(data);
-    if (index < 0 || index > this.length) {
-      return false;
-    } else {
-      if (index === this.length) {
-        this.push(newNode);
-      } else if (index === 0) {
-        this.unshift(newNode);
-      } else {
-        const prev = this.get(index - 1);
-        const prevNext = prev.next;
-        prev.next = newNode;
-        newNode.next = prevNext;
-        this.length++;
-      }
-      return true;
-    }
+    const prev = this.get(index - 1);
+    const prevNext = prev.next;
+
+    prev.next = newNode;
+    newNode.next = prevNext;
+    this.length++;
+    return true;
   }
 
   // 특정 위치에 노드 삭제하기
@@ -228,9 +224,37 @@ class SinglelyLinkedList {
       return removed;
     }
   }
+
+  reverse() {
+    /*
+    - Swap the head and tail
+    - Create a variable called next
+    - Create a variable called prev
+    - Create a variable called node and initialize it to the head property
+    - Loop through the list
+    - Set next to be the next property on whatever node is
+    - Set the next property on the node to be whatever prev is
+    - Set prev to be the value of the node variable
+    - Set the node variable to be the value of the next variable
+    - Once you have finished looping, return the list
+    1 2 3 4
+    */
+    let node = this.head;
+    this.head = this.tail;
+    this.tail = node;
+    let next;
+    let prev = null;
+    for (let i = 0; i < this.length.length; i++) {
+      next = node.next;
+      node.next = prev;
+      prev = node;
+      node = next;
+    }
+    return this;
+  }
 }
 
-const list = new SinglelyLinkedList();
+const list = new SinglyLinkedList();
 
 list.push('firstNode');
 list.push('secondNode');
