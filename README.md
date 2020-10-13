@@ -1,85 +1,35 @@
-<<<<<<< HEAD
-# linked-lists
+# Data-Structure
 
-## What is a linked list?
+## Singly Linked List
 
-A data structure that contains a **head**, **tail** and **length** property.
-Linked Lists consist of nodes, and each **node** has a **value** and a **pointer** to another node or null
+Each node has only one pointer to the **next** node.
 
-## Comparisons with Arrays
+👉 [Learn More](https://www.notion.so/Data-Structure-Singly-Linked-List-fce02bbdb6054980b79f9b3fecbe2fcf)
 
-### Array
+## Doubly Linked List
 
-- Indexed in order!
-- Insertion and deletion can be expensive
-- Can quickly be accessed at a specific index
+Each node has two pointers to the **next** node and the **previous** node.
 
-### List
+👉 [Learn More](https://www.notion.so/Data-Structure-Doubly-Linked-List-6138a9973d8045059e556bf849f390e3)
 
-- Do not have indexes!
-- Connected via nodes with a **next** pointer
-- Random access is not allowed
-
-## Singly Linked Lists? Doubly Linked Lists?
-
-In Singly Linked Lists, each node has only one pointer to the **next** node.
-In Doubly Linked Lists, each node has two pointers to the **next** node and the **previous** node.
-
-More memory, More Flexibility in Doubly Linked Lists! It's **almost** always a tradeoff
-
-## List Methods
-
-- [x] Push : Adding a new node to the end of the Linked List.
-
-- [x] Pop : Removing a node from the end of the Linked List.
-
-- [x] Shift : Removing a new node from the beginning of the Linked List.
-
-- [x] Unshift : Adding a new node to the beginning of the Linked List.
-
-- [x] Get : Retrieving a node by it's position in the Linked List.
-
-- [x] Set : Changing the value of a node based on it's position in the Linked List.
-
-- [x] Insert : Adding a node to the Linked List at a specific position.
-
-- [x] Remove : Removing a node from the Linked List at a specific position.
-
-- [x] Reverse : Reversing the Linked List in place.
-=======
-# stack-n-queues
-
-## What is a STACK?
+## Stack
 
 A **LIFO** data structure where the **_last_** value **_in_** is always the **_first_** one **_out_**.!
 
-- Managing function invocations
-- Undo / Redo
-- Routing (the history object, pages you have visited and go back/forward)
+👉 [Learn More](https://www.notion.so/Data-Structure-Stack-2377a973e8764c6d822bb9303d39926b)
 
-<br>
-
-## What is a QUEUE?
+## Queue
 
 A **FIFO** data structure where the **_first_** value **_in_** is always the **_first_** one **_out_**.
 
-- Background tasks
-- Uploading resources
-- Printing / Task processing
+👉 [Learn More](https://www.notion.so/Data-Structure-Queue-be629e71146c44478d21f429b7879869)
 
-<br>
+## Hash
 
-## Stack Methods
+Hash tables are used to store *key\*\*value* pairs. They are like arrays, but the keys are not ordered.
 
-- [x] Push : Add a value to the top of the stack.
+👉 [Learn More](https://www.notion.so/Data-Structure-Hash-797b1b0914084205b0b9f20e428a8650)
 
-- [x] Pop : Remove a value from the top of the stack.
+## Recursion
 
-<br>
-
-## Queue Methods
-
-- [x] Enqueue : Adding to the **beginning** of the Queue.
-
-- [x] Dequeue : Removing from the beginning of the Queue.
->>>>>>> stack.js/master
+👉 [Learn More](https://www.notion.so/Data-Structure-Recursion-3b9af862ce8c4ec9b30a79b317f5c308)
