@@ -6,10 +6,12 @@ class Node {
 }
 
 //Queue : First in First Out
+//In(head) Out(tail)
+//unshift + pop OR push + shift
 class Queue {
   constructor() {
-    this.first = null;
-    this.last = null;
+    this.head = null;
+    this.tail = null;
     this.length = 0;
   }
 
@@ -23,17 +25,16 @@ class Queue {
     */
     const newNode = new Node(data);
     // 기존 노드가 없으면
-    if (!this.first) {
-      this.first = newNode;
-      this.last = newNode;
+    if (!this.head) {
+      this.head = newNode;
+      this.tail = newNode;
     } else {
       // 기존 노드가 있으면
-      const oldLast = this.last;
-      oldLast.next = newNode;
-      this.last = newNode;
+      const oldTail = this.tail;
+      oldTail.next = newNode;
+      this.tail = newNode;
     }
     this.length++;
-    console.log(this.length);
     return this;
   }
 
@@ -45,16 +46,16 @@ class Queue {
     < 2 3
     < 3 
     */
-    const removedNode = this.first;
+    const removedNode = this.head;
     // 기존 노드가 없으면
     if (!removedNode) return null;
     // 노드가 1개 남았을 때
     if (this.length === 1) {
-      this.first = null;
+      this.head = null;
       this.last = null;
     } else {
       // 기존 노드가 있으면
-      this.first = removedNode.next;
+      this.head = removedNode.next;
       removedNode.next = null;
     }
     this.length--;
