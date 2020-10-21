@@ -227,24 +227,36 @@ class SinglyLinkedList {
 
   reverse() {
     /*
-    - Swap the head and tail
-    - Create a variable called next
-    - Create a variable called prev
-    - Create a variable called node and initialize it to the head property
-    - Loop through the list
-    - Set next to be the next property on whatever node is
-    - Set the next property on the node to be whatever prev is
-    - Set prev to be the value of the node variable
-    - Set the node variable to be the value of the next variable
-    - Once you have finished looping, return the list
+    - head와 tail 교체
+    - 변수 next, prev(초기값:null) 생성
+    - 변수 node를 만들고 head 값으로 할당
+    - (a~d 반복)
+    a node.next값을 저장한다
+    b 현재 node의 next상태를 prev값으로 바꾼다 (reverse)
+    c 다음 순서를 위해, prev값에 현재 노드를 저장
+    d 저장된 node.next값을 현재 노드로 업데이트
+    
     1 2 3 4
+    n
+              next = 2 prev = null
+              prev = n
+      n  
+              next = 3 prev = 1
+              prev = n
+        n  
+              next = 4 prev = 2
+              prev = n
+          n
+              next = null prev = 3
+              prev = n
     */
+
     let node = this.head;
     this.head = this.tail;
     this.tail = node;
     let next;
     let prev = null;
-    for (let i = 0; i < this.length.length; i++) {
+    for (let i = 0; i < this.length; i++) {
       next = node.next;
       node.next = prev;
       prev = node;
