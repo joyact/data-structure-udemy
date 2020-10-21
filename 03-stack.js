@@ -5,11 +5,13 @@ class Node {
   }
 }
 
-//Stack : Last in First Out
+// Stack : Last in First Out
+// In(head), Out(head)
+// push + pop OR unshift + shift
 class Stack {
   constructor() {
-    this.first = null;
-    this.last = null;
+    this.head = null;
+    this.tail = null;
     this.length = 0;
   }
 
@@ -22,17 +24,16 @@ class Stack {
     */
     const newNode = new Node(data);
     // 기존 노드가 없으면
-    if (!this.first) {
-      this.first = newNode;
-      this.last = newNode;
+    if (!this.head) {
+      this.head = newNode;
+      this.tail = newNode;
     } else {
       // 기존 노드가 있으면
-      const oldFirst = this.first;
-      this.first = newNode;
-      newNode.next = oldFirst;
+      const oldHead = this.head;
+      this.head = newNode;
+      newNode.next = oldHead;
     }
     this.length++;
-    console.log(this.length);
     return this;
   }
 
@@ -43,15 +44,15 @@ class Stack {
     < 2 1
     < 1
     */
-    const removedNode = this.first;
+    const removedNode = this.head;
     // 기존 노드가 없으면
     if (!removedNode) return null;
     // 노드가 1개 남았을 때
     if (this.length === 1) {
-      this.first = null;
-      this.last = null;
+      this.head = null;
+      this.tail = null;
     } else {
-      this.first = removedNode.next;
+      this.head = removedNode.next;
       removedNode.next = null;
     }
     this.length--;
