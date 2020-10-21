@@ -180,6 +180,22 @@ class DoublyLinkedLists {
     this.length--;
     return true;
   }
+
+  reverse() {
+    let node = this.head;
+    this.head = this.tail;
+    this.tail = node;
+    let nextRev;
+    let prevRev = null;
+    for (let i = 0; i < this.length; i++) {
+      nextRev = node.next;
+      node.next = prevRev;
+      node.prev = nextRev; // singly list와 다른 부분(prev)
+      prevRev = node;
+      node = nextRev;
+    }
+    return this;
+  }
 }
 
 const list = new DoublyLinkedLists();
