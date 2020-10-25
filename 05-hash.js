@@ -19,12 +19,15 @@ class HashTable {
       Accepts a key and a value
       Hashes the key
       Stores the key-value pair in the hash table array via separate chaining
-      */
+    */
+    let item = {};
     let index = this._hash(key);
     if (!this.keyMap[index]) {
       this.keyMap[index] = [];
     }
-    this.keyMap[index].push([key, value]);
+    item[key] = value;
+    this.keyMap[index].push(item);
+    return this.keyMap;
   }
 
   get(key) {
@@ -35,14 +38,11 @@ class HashTable {
       If the key isn't found, returns undefined
     */
     let index = this._hash(key);
-    if (this.keyMap[index]) {
-      for (let i = 0; i < this.keyMap[index].length; i++) {
-        if (this.keyMap[index][i][0] === key) {
-          return this.keyMap[index][i];
-        }
-      }
+    let position = this.keyMap[index];
+    if (!position) return undefined;
+    for (let i = 0; i < position.length; i++) {
+      if (position[i][key]) return position[i][key];
     }
-    return undefined;
   }
 
   keys() {
@@ -54,9 +54,8 @@ class HashTable {
     for (let i = 0; i < this.keyMap.length; i++) {
       if (this.keyMap[i]) {
         for (let j = 0; j < this.keyMap[i].length; j++) {
-          if (!keysArr.includes(this.keyMap[i][j][0])) {
-            keysArr.push(this.keyMap[i][j][0]);
-          }
+          let key = Object.keys(this.keyMap[i][j]);
+          if (!keysArr.includes(key[0])) keysArr.push(key[0]);
         }
       }
     }
@@ -72,12 +71,20 @@ class HashTable {
     for (let i = 0; i < this.keyMap.length; i++) {
       if (this.keyMap[i]) {
         for (let j = 0; j < this.keyMap[i].length; j++) {
-          if (!valuesArr.includes(this.keyMap[i][j][1])) {
-            valuesArr.push(this.keyMap[i][j][1]);
-          }
+          let value = Object.values(this.keyMap[i][j]);
+          if (!valuesArr.includes(value[0])) valuesArr.push(value[0]);
         }
       }
     }
     return valuesArr;
   }
 }
+
+const hash = new HashTable(17);
+hash.set('maroon', '#800000');
+hash.set('yellow', '#FFFF00');
+hash.set('olive', '#808000');
+hash.set('salmon', '#FA8072');
+hash.set('lightcoral', '#F08080');
+hash.set('mediumvioletred', '#C71585');
+hash.set('plum', '#DDA0DD');
