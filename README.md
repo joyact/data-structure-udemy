@@ -15,5 +15,8 @@
 **Hash** 👉 Hash tables are used to store *key value* pairs. They are like arrays, but the keys are not ordered.
 [Learn More](https://www.notion.so/Data-Structure-Hash-797b1b0914084205b0b9f20e428a8650)
 
-**Recursion** 👉
+**Recursion** 👉 A process (a fucntion in our case) that calls itself
 [Learn More](https://www.notion.so/Data-Structure-Recursion-3b9af862ce8c4ec9b30a79b317f5c308)
+
+**Searching** 👉 Given an array, check if it's the value we want.
+[Learn More](https://www.notion.so/joyact/Data-Structure-Searching-4b7e5e08c2fc4797bdfa9e542b6b91a8)
