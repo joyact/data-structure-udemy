@@ -37,3 +37,17 @@ binarySearch([2, 5, 6, 9, 13, 15, 28, 30], 300);
 //              S   M       E
 // [2, 5, 6, 9, 13, 15, 28, 30]
 //                      SM  E
+
+// String Search
+function naiveSearch(long, short) {
+  var count = 0;
+  for (var i = 0; i < long.length; i++) {
+    for (var j = 0; j < short.length; j++) {
+      if (short[j] !== long[i + j]) break;
+      if (j === short.length - 1) count++;
+    }
+  }
+  return count;
+}
+
+naiveSearch('lorie loled', 'lol');
