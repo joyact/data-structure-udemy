@@ -20,3 +20,6 @@
 
 **Searching** 👉 Given an array, check if it's the value we want.
 [Learn More](https://www.notion.so/joyact/Data-Structure-Searching-4b7e5e08c2fc4797bdfa9e542b6b91a8)
+
+**Tree** 👉 A data structure that consists of nodes in a **parent / child** relationship.
+[Learn More](https://www.notion.so/joyact/Data-Structure-Tree-6346251a697e49cb8bd5f44f85696319)
